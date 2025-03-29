@@ -1,4 +1,8 @@
-import { useLocation } from "react-router-dom";
+
+import React from "react";
+import { useLocation, Link } from "react-router-dom";
+import { Button } from '@/components/ui/button';
+import Layout from '@/components/layout/Layout';
 import { useEffect } from "react";
 
 const NotFound = () => {
@@ -12,15 +16,24 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <Layout>
+      <div className="min-h-[70vh] flex items-center justify-center bg-barber-cream">
+        <div className="text-center max-w-md px-4">
+          <h1 className="text-6xl font-playfair font-bold mb-4 text-barber-charcoal">404</h1>
+          <p className="text-xl text-barber-charcoal/80 mb-8">
+            We couldn't find the page you're looking for.
+          </p>
+          <div className="space-y-4">
+            <Button asChild className="bg-barber-gold hover:bg-barber-brown text-white px-6 py-3 w-full">
+              <Link to="/">Return to Home</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-barber-charcoal text-barber-charcoal hover:bg-barber-charcoal hover:text-white px-6 py-3 w-full">
+              <Link to="/contact">Contact Us</Link>
+            </Button>
+          </div>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
