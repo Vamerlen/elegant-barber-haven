@@ -67,9 +67,9 @@ const Map = () => {
                 <div>
                   <h4 className="font-semibold mb-1">Contact</h4>
                   <p className="text-barber-charcoal/70">
-                    Phone: +27 12 345 6789<br />
-                    Email: info@kmdprobarber.com
-                  </p>
+                    Phone: +27 78 824 6963<br />
+                    Email: kdmprobarber@outlook.com
+                </p>
                 </div>
               </div>
             </div>
