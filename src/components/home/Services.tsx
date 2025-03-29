@@ -9,25 +9,25 @@ const serviceData = [
     icon: <Scissors className="text-barber-gold" size={32} />,
     title: "Buzzcut",
     description: "Quick and clean buzzcut with consistent length all around using premium clippers.",
-    price: "R150"
+    price: "R100"
   },
   {
     icon: <Star className="text-barber-gold" size={32} />,
-    title: "Fade Cut with Beard Shave",
-    description: "Expert fade haircut with precision beard shaving for a clean, fresh look.",
-    price: "R220"
+    title: "Fade Cut",
+    description: "Expert fade haircut with precision shaving for a clean, fresh look.",
+    price: "R150"
   },
   {
     icon: <Award className="text-barber-gold" size={32} />,
     title: "Hair Dye & Haircut",
     description: "Full color service with expert cutting and styling, available in all colors.",
-    price: "R350"
+    price: "R400"
   },
   {
     icon: <Sparkles className="text-barber-gold" size={32} />,
     title: "Lined Designs",
     description: "Custom hair designs with precision lines and patterns by our expert barbers.",
-    price: "R250"
+    price: "R20"
   }
 ];
 
