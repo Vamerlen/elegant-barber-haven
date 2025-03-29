@@ -5,50 +5,6 @@ import { ShoppingBag, Package, Tag, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-const merchItems = [
-  {
-    id: 1,
-    name: "Premium Barber T-Shirt",
-    price: "R320",
-    description: "Stylish cotton t-shirt with KMD Pro Barber logo, perfect for casual wear.",
-    imageUrl: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&auto=format&fit=crop",
-  },
-  {
-    id: 2,
-    name: "Classic Grooming Kit",
-    price: "R450",
-    description: "Complete grooming kit with beard oil, scissors, and comb in a stylish pouch.",
-    imageUrl: "https://images.unsplash.com/photo-1621607505138-34931a47bd53?w=500&auto=format&fit=crop",
-  },
-  {
-    id: 3,
-    name: "Barber Shop Cap",
-    price: "R220",
-    description: "Adjustable cap with embroidered KMD Pro Barber logo, perfect for any occasion.",
-    imageUrl: "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=500&auto=format&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Premium Beard Oil",
-    price: "R180",
-    description: "Nourishing beard oil with natural ingredients for a healthy, soft beard.",
-    imageUrl: "https://images.unsplash.com/photo-1592647420148-bfcc177e2117?w=500&auto=format&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Barber Shop Hoodie",
-    price: "R450",
-    description: "Comfortable hoodie with KMD Pro Barber design, perfect for cooler days.",
-    imageUrl: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&auto=format&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Straight Razor Kit",
-    price: "R650",
-    description: "Professional straight razor with strop and case, handcrafted with premium materials.",
-    imageUrl: "https://images.unsplash.com/photo-1635321500420-c96cb576c249?w=500&auto=format&fit=crop",
-  },
-];
 
 const MerchStore = () => {
   return (
@@ -61,6 +17,9 @@ const MerchStore = () => {
           <p className="text-xl opacity-90 max-w-2xl">
             Premium quality products for the modern gentleman
           </p>
+                        <Button asChild className="btn-primary w-full">
+                <Link href="https://kmd-pro-barber-fc86120d5e.printify.me/" onClick={() => ></Link>See Printify Store</Link>
+              </Button>
         </div>
       </section>
 
@@ -70,7 +29,7 @@ const MerchStore = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-white text-center md:text-left">
             <div className="flex items-center gap-3">
               <Package size={24} />
-              <span>Free shipping on orders over R1000</span>
+              <span>Free shipping on orders over R100</span>
             </div>
             <div className="flex items-center gap-3">
               <Tag size={24} />
