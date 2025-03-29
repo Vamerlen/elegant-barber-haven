@@ -275,7 +275,7 @@ const BookingPage = () => {
                     If you need help with your booking or have any questions, feel free to contact us.
                   </p>
                   <p className="font-medium">
-                    <a href="tel:+27123456789" className="text-barber-gold hover:underline">+27 12 345 6789</a>
+                    <a href="tel:+27788246963" className="text-barber-gold hover:underline">+27 78 824 6963</a>
                   </p>
                 </div>
               </div>
