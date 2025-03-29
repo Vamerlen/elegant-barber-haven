@@ -86,7 +86,6 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {barbers.map((barber, index) => (
               <div key={index} className="bg-white p-8 shadow-md hover:shadow-lg transition-shadow border-t-2 border-barber-gold">
-                <div className="aspect-square bg-gray-200 mb-6 rounded-sm"></div>
                 <h3 className="text-xl font-playfair font-semibold mb-1">{barber.name}</h3>
                 <p className="text-barber-gold mb-2">{barber.title}</p>
                 <p className="text-sm mb-3">Experience: {barber.experience}</p>
