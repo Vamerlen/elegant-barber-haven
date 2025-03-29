@@ -6,22 +6,24 @@ import { Calendar, Check, Clock } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 
 const barbers = [
-  { id: 1, name: "Kgothatso Malemela", specialties: "Classic cuts, Fades" },
+  { id: 1, name: "Doudou Madoucha", specialties: "Classic cuts, Fades" },
   { id: 2, name: "Michael Dlamini", specialties: "Pompadours, Beard styling" },
   { id: 3, name: "David Nkosi", specialties: "Modern styles, Textured cuts" },
   { id: 4, name: "Thabo Molefe", specialties: "Contemporary cuts, Color treatments" }
 ];
-
+0
 const services = [
-  { id: 1, name: "Classic Haircut", duration: "45 min", price: "R180" },
-  { id: 2, name: "Premium Haircut", duration: "60 min", price: "R250" },
-  { id: 3, name: "Hot Towel Shave", duration: "30 min", price: "R180" },
-  { id: 4, name: "Beard Trim & Style", duration: "30 min", price: "R150" },
-  { id: 5, name: "VIP Experience", duration: "90 min", price: "R450" }
+  { id: 1, name: "Fade Haircut", duration: "45 min", price: "R150" },
+  { id: 2, name: "Buzzcut", duration: "60 min", price: "R100" },
+  { id: 3, name: "Hair Dye(All Colours) + Haircut", duration: "30 min", price: "R400" },
+  { id: 4, name: "Beard Shave", duration: "30 min", price: "R30" },
+  { id: 5, name: "Crew Cut", duration: "90 min", price: "R85" },
+  { id: 6, name: "Line Design", duration: "90 min", price: "R20" },
+  { id: 7, name: "Bald Shave + Beard Shave", duration: "90 min", price: "R60" }
 ];
 
 const timeSlots = [
-  "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", 
+  "7:30 AM", "08:00 AM", "09:00 AM" "10:00 AM", "11:00 AM", "12:00 PM", 
   "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", 
   "5:00 PM", "6:00 PM"
 ];
