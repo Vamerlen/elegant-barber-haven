@@ -9,42 +9,49 @@ const services = [
     icon: <Scissors className="text-barber-gold" size={32} />,
     title: "Buzzcut",
     description: "Quick and clean buzzcut with consistent length all around using premium clippers for a low-maintenance style.",
-    price: "R150",
+    price: "R100",
     duration: "30 min"
   },
   {
     icon: <Star className="text-barber-gold" size={32} />,
-    title: "Fade Cut & Beard Shave",
-    description: "Expert fade haircut with precision beard shaving for a clean, fresh look that transitions smoothly between lengths.",
-    price: "R220",
+    title: "Fade Cut",
+    description: "Expert fade haircut with precision shaving for a clean, fresh look that transitions smoothly between lengths.",
+    price: "R150",
     duration: "60 min"
   },
   {
     icon: <Award className="text-barber-gold" size={32} />,
     title: "Hair Dye & Haircut",
     description: "Full color service with expert cutting and styling, available in all colors. Includes consultation and aftercare advice.",
-    price: "R350 - R500",
+    price: "R400",
     duration: "90 min"
   },
   {
     icon: <Coffee className="text-barber-gold" size={32} />,
     title: "Crewcut",
     description: "Classic short cut that's slightly longer on top with tapered sides for a timeless, versatile look.",
-    price: "R180",
+    price: "R85",
     duration: "45 min"
   },
   {
     icon: <Wind className="text-barber-gold" size={32} />,
     title: "Lined Designs",
     description: "Custom hair designs with precision lines and patterns by our expert barbers, add personality to any haircut.",
-    price: "R250",
+    price: "R20",
     duration: "60 min"
   },
   {
     icon: <Palette className="text-barber-gold" size={32} />,
     title: "Bald Shave & Beard Shave",
     description: "Complete head and beard shave with hot towel treatment for the ultimate smooth, clean finish.",
-    price: "R200",
+    price: "R60",
+    duration: "45 min"
+  },
+  {
+    icon: <Coffee className="text-barber-gold" size={32} />,
+    title: "Beard Shave",
+    description: "Beard shave with hot towel treatment for the ultimate smooth, clean finish.",
+    price: "R30",
     duration: "45 min"
   }
 ];
