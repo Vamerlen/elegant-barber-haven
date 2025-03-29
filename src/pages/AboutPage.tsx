@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button';
 
 const barbers = [
   {
-    name: "Kgothatso Malemela",
-    title: "Founder & Master Barber",
-    experience: "15+ years",
-    bio: "Kgothatso founded KMD Pro Barber with a vision to blend traditional techniques with contemporary style. His precision cuts have earned him recognition throughout Pretoria.",
+    name: "Doudou Madoucha",
+    title: "Founder Master Barber",
+    experience: "33+ years",
+    bio: "Doudou founded KMD Pro Barber with a vision to blend traditional techniques with contemporary style. His precision cuts have earned him recognition throughout Pretoria.",
   },
   {
     name: "Michael Dlamini",
@@ -40,7 +40,7 @@ const AboutPage = () => {
         <div className="container-custom relative z-10 text-white">
           <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-4">About KMD Pro Barber</h1>
           <p className="text-xl opacity-90 max-w-2xl">
-            A legacy of excellence in the art of barbering since 2010
+            A legacy of excellence in the art of barbering since 1992
           </p>
         </div>
       </section>
@@ -57,7 +57,7 @@ const AboutPage = () => {
             <div>
               <h2 className="text-3xl font-playfair font-bold mb-6">Our Story</h2>
               <p className="text-barber-charcoal/80 mb-4">
-                Founded in 2010 by master barber Kgothatso Malemela, KMD Pro Barber began as a small, dedicated space focused on premium grooming services. From those humble beginnings, we've grown into Pretoria's premier destination for sophisticated men's grooming.
+                Founded in 1992 by master barber Doudou Madoucha, KMD Pro Barber began as a small, dedicated space focused on premium grooming services. From those humble beginnings, we've grown into Pretoria's premier destination for sophisticated men's grooming.
               </p>
               <p className="text-barber-charcoal/80 mb-4">
                 Our philosophy centers on the perfect blend of traditional barbering techniques and modern style. We believe that a great haircut is about more than appearance—it's about confidence, self-expression, and the experience of being pampered with expert care.
