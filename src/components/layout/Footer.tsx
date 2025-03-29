@@ -19,8 +19,8 @@ const Footer = () => {
               <a href="https://facebook.com" className="hover:text-barber-gold transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="https://twitter.com" className="hover:text-barber-gold transition-colors" aria-label="Twitter">
-                <Twitter size={20} />
+              <a href="https://tiktok.com" className="hover:text-barber-gold transition-colors" aria-label="Tiktok">
+                <Tiktok size={20} />
               </a>
             </div>
           </div>
@@ -35,7 +35,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 text-barber-gold" size={16} />
-                <a href="tel:+27123456789" className="hover:text-barber-gold transition-colors">+27 12 345 6789</a>
+                <a href="tel:+27788246963" className="hover:text-barber-gold transition-colors">+27 78 824 6963</a>
               </li>
               <li className="flex items-start">
                 <Clock className="mr-2 mt-1 text-barber-gold" size={16} />
