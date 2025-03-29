@@ -76,7 +76,7 @@ const ContactPage = () => {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Phone</h3>
                     <p className="text-barber-charcoal/70">
-                      <a href="tel:+27123456789" className="hover:text-barber-gold transition-colors">+27 12 345 6789</a>
+                      <a href="tel:+27123456789" className="hover:text-barber-gold transition-colors">+27 78 824 6963</a>
                     </p>
                   </div>
                 </div>
@@ -217,7 +217,7 @@ const ContactPage = () => {
           </div>
           
           <div className="aspect-[16/9] bg-gray-200 rounded-sm flex items-center justify-center">
-            <p className="text-gray-500">Interactive Map Will Be Here</p>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d224.66973031683696!2d28.193437063312647!3d-25.713835919462525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1743269134192!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </section>
