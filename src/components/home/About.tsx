@@ -9,7 +9,7 @@ const About = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">Craftsmanship & Excellence Since 2010</h2>
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">Craftsmanship & Excellence Since 1992</h2>
             <p className="text-barber-charcoal/80 mb-4">
               At KMD Pro Barber, we blend traditional barbering techniques with modern style to deliver an exceptional grooming experience. Our master barbers bring decades of combined expertise to every service.
             </p>
