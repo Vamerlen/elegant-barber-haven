@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '@/components/layout/Layout';
 import { Link } from 'react-router-dom';
@@ -8,59 +7,45 @@ import { Scissors, Star, Award, Sparkles, Coffee, Wind, Palette, Droplet } from 
 const services = [
   {
     icon: <Scissors className="text-barber-gold" size={32} />,
-    title: "Classic Haircut",
-    description: "Precision cut with expert styling, tailored to your face shape and preferences. Includes consultation, shampoo, and styling.",
-    price: "R180 - R220",
-    duration: "45 min"
-  },
-  {
-    icon: <Star className="text-barber-gold" size={32} />,
-    title: "Premium Haircut",
-    description: "Our signature service with extended massage, premium products, and detailed styling techniques for the perfect finish.",
-    price: "R250 - R300",
-    duration: "60 min"
-  },
-  {
-    icon: <Sparkles className="text-barber-gold" size={32} />,
-    title: "Hot Towel Shave",
-    description: "Traditional straight razor shave with hot towel treatment, pre-shave oil, and soothing aftershave balm.",
-    price: "R180",
-    duration: "30 min"
-  },
-  {
-    icon: <Award className="text-barber-gold" size={32} />,
-    title: "Beard Trim & Style",
-    description: "Expert shaping and styling of your beard with precise lines and contours to enhance your facial features.",
+    title: "Buzzcut",
+    description: "Quick and clean buzzcut with consistent length all around using premium clippers for a low-maintenance style.",
     price: "R150",
     duration: "30 min"
   },
   {
+    icon: <Star className="text-barber-gold" size={32} />,
+    title: "Fade Cut & Beard Shave",
+    description: "Expert fade haircut with precision beard shaving for a clean, fresh look that transitions smoothly between lengths.",
+    price: "R220",
+    duration: "60 min"
+  },
+  {
+    icon: <Award className="text-barber-gold" size={32} />,
+    title: "Hair Dye & Haircut",
+    description: "Full color service with expert cutting and styling, available in all colors. Includes consultation and aftercare advice.",
+    price: "R350 - R500",
+    duration: "90 min"
+  },
+  {
     icon: <Coffee className="text-barber-gold" size={32} />,
-    title: "Father & Son Package",
-    description: "Quality time with matching haircuts for father and son, with a complimentary drink for dad and treat for son.",
-    price: "R350",
-    duration: "75 min"
+    title: "Crewcut",
+    description: "Classic short cut that's slightly longer on top with tapered sides for a timeless, versatile look.",
+    price: "R180",
+    duration: "45 min"
   },
   {
     icon: <Wind className="text-barber-gold" size={32} />,
-    title: "Grey Blending",
-    description: "Subtle color service to reduce grey hair while maintaining a natural look. Includes consultation and styling.",
-    price: "R280",
+    title: "Lined Designs",
+    description: "Custom hair designs with precision lines and patterns by our expert barbers, add personality to any haircut.",
+    price: "R250",
     duration: "60 min"
   },
   {
     icon: <Palette className="text-barber-gold" size={32} />,
-    title: "Hair & Scalp Treatment",
-    description: "Revitalizing treatment to nourish your scalp and hair with premium products, including massage.",
-    price: "R220",
+    title: "Bald Shave & Beard Shave",
+    description: "Complete head and beard shave with hot towel treatment for the ultimate smooth, clean finish.",
+    price: "R200",
     duration: "45 min"
-  },
-  {
-    icon: <Droplet className="text-barber-gold" size={32} />,
-    title: "VIP Experience",
-    description: "Complete package including haircut, hot towel shave, facial treatment, head massage, and complimentary drink.",
-    price: "R450",
-    duration: "90 min"
   }
 ];
 

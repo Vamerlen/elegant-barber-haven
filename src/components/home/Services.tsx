@@ -7,27 +7,27 @@ import { Button } from '@/components/ui/button';
 const serviceData = [
   {
     icon: <Scissors className="text-barber-gold" size={32} />,
-    title: "Premium Haircut",
-    description: "Expert precision cutting tailored to your style with complimentary consultation.",
-    price: "R200"
-  },
-  {
-    icon: <Star className="text-barber-gold" size={32} />,
-    title: "Hot Towel Shave",
-    description: "Traditional straight razor shave with hot towel treatment for ultimate relaxation.",
-    price: "R180"
-  },
-  {
-    icon: <Award className="text-barber-gold" size={32} />,
-    title: "Beard Trim & Design",
-    description: "Shape and style your beard to perfection with our expert barbers.",
+    title: "Buzzcut",
+    description: "Quick and clean buzzcut with consistent length all around using premium clippers.",
     price: "R150"
   },
   {
+    icon: <Star className="text-barber-gold" size={32} />,
+    title: "Fade Cut with Beard Shave",
+    description: "Expert fade haircut with precision beard shaving for a clean, fresh look.",
+    price: "R220"
+  },
+  {
+    icon: <Award className="text-barber-gold" size={32} />,
+    title: "Hair Dye & Haircut",
+    description: "Full color service with expert cutting and styling, available in all colors.",
+    price: "R350"
+  },
+  {
     icon: <Sparkles className="text-barber-gold" size={32} />,
-    title: "VIP Experience",
-    description: "Complete package including haircut, shave, facial treatment, and complimentary drink.",
-    price: "R450"
+    title: "Lined Designs",
+    description: "Custom hair designs with precision lines and patterns by our expert barbers.",
+    price: "R250"
   }
 ];
 

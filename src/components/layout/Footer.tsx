@@ -40,9 +40,9 @@ const Footer = () => {
               <li className="flex items-start">
                 <Clock className="mr-2 mt-1 text-barber-gold" size={16} />
                 <div>
-                  <p>Mon-Fri: 9am - 7pm</p>
-                  <p>Sat: 9am - 6pm</p>
-                  <p>Sun: 10am - 3pm</p>
+                  <p>Monday: Closed</p>
+                  <p>Tuesday-Friday: 07:00 - 18:00</p>
+                  <p>Saturday-Sunday: 07:00 - 15:00</p>
                 </div>
               </li>
             </ul>
@@ -63,6 +63,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/gallery" className="hover:text-barber-gold transition-colors">Gallery</Link>
+              </li>
+              <li>
+                <Link to="/merch" className="hover:text-barber-gold transition-colors">Merchandise</Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-barber-gold transition-colors">Contact</Link>
