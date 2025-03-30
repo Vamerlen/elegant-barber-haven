@@ -5,6 +5,51 @@ import { ShoppingBag, Package, Tag, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
+// Sample merchandise items data
+const merchItems = [
+  {
+    id: 1,
+    name: "KMD Pro Barber T-Shirt",
+    description: "Premium cotton t-shirt with embroidered logo",
+    price: "R250",
+    imageUrl: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 2,
+    name: "Grooming Kit",
+    description: "Complete set with beard oil, comb and scissors",
+    price: "R450",
+    imageUrl: "https://images.unsplash.com/photo-1589439108834-c52047d64315?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 3,
+    name: "Barber Cap",
+    description: "Stylish cap with KMD Pro Barber embroidery",
+    price: "R180",
+    imageUrl: "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 4,
+    name: "Premium Beard Oil",
+    description: "Nourishing beard oil with natural ingredients",
+    price: "R200",
+    imageUrl: "https://images.unsplash.com/photo-1517594422361-5eeb8ae275a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 5,
+    name: "KMD Hoodie",
+    description: "Comfortable hoodie with embroidered logo",
+    price: "R350",
+    imageUrl: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 6,
+    name: "Barber Accessories Set",
+    description: "Collection of premium barber accessories",
+    price: "R650",
+    imageUrl: "https://images.unsplash.com/photo-1599351431613-275b0699ee7c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  }
+];
 
 const MerchStore = () => {
   return (
@@ -17,9 +62,11 @@ const MerchStore = () => {
           <p className="text-xl opacity-90 max-w-2xl">
             Premium quality products for the modern gentleman
           </p>
-                        <Button asChild className="btn-primary w-full">
-                <Link href="https://kmd-pro-barber-fc86120d5e.printify.me/" onClick={() => ></Link>See Printify Store</Link>
-              </Button>
+          <div className="mt-6">
+            <Button asChild className="bg-barber-gold hover:bg-white hover:text-barber-charcoal text-white px-8 py-6 rounded-sm">
+              <a href="https://kmd-pro-barber-fc86120d5e.printify.me/" target="_blank" rel="noopener noreferrer">See Printify Store</a>
+            </Button>
+          </div>
         </div>
       </section>
 

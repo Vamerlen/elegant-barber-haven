@@ -69,7 +69,7 @@ const Map = () => {
                   <p className="text-barber-charcoal/70">
                     Phone: +27 78 824 6963<br />
                     Email: kdmprobarber@outlook.com
-                </p>
+                  </p>
                 </div>
               </div>
             </div>

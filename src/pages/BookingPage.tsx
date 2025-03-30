@@ -1,70 +1,50 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { Calendar, Check, Clock } from 'lucide-react';
-import { useToast } from "@/components/ui/use-toast";
-
-const barbers = [
-  { id: 1, name: "Doudou Madoucha", specialties: "Classic cuts, Fades" },
-  { id: 2, name: "Michael Dlamini", specialties: "Pompadours, Beard styling" },
-  { id: 3, name: "David Nkosi", specialties: "Modern styles, Textured cuts" },
-  { id: 4, name: "Thabo Molefe", specialties: "Contemporary cuts, Color treatments" }
-];
-0
-const services = [
-  { id: 1, name: "Fade Haircut", duration: "45 min", price: "R150" },
-  { id: 2, name: "Buzzcut", duration: "60 min", price: "R100" },
-  { id: 3, name: "Hair Dye(All Colours) + Haircut", duration: "30 min", price: "R400" },
-  { id: 4, name: "Beard Shave", duration: "30 min", price: "R30" },
-  { id: 5, name: "Crew Cut", duration: "90 min", price: "R85" },
-  { id: 6, name: "Line Design", duration: "90 min", price: "R20" },
-  { id: 7, name: "Bald Shave + Beard Shave", duration: "90 min", price: "R60" }
-];
-
-const timeSlots = [
-  "7:30 AM", "08:00 AM", "09:00 AM" "10:00 AM", "11:00 AM", "12:00 PM", 
-  "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", 
-  "5:00 PM", "6:00 PM"
-];
+import { Calendar } from '@/components/ui/calendar';
+import { format } from 'date-fns';
 
 const BookingPage = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = React.useState({
+  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [contactInfo, setContactInfo] = useState({
     name: '',
     email: '',
     phone: '',
-    barber: '',
-    service: '',
-    date: '',
-    time: '',
     notes: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const availableTimes = [
+    '07:00', '08:00', '09:00', '10:00', '11:00',
+    '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'
+  ];
+
+  const services = [
+    { id: 'haircut', name: 'Haircut', price: 'R150' },
+    { id: 'beard', name: 'Beard Trim', price: 'R100' },
+    { id: 'combo', name: 'Haircut & Beard Combo', price: 'R220' },
+    { id: 'shave', name: 'Clean Shave', price: 'R120' },
+    { id: 'fade', name: 'Fade', price: 'R180' },
+    { id: 'design', name: 'Hair Design', price: 'R200+' }
+  ];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setContactInfo(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Booking submitted:', formData);
-    
-    toast({
-      title: "Booking Successful!",
-      description: "Your appointment has been scheduled. We look forward to seeing you!",
+    console.log({
+      date,
+      selectedTime,
+      selectedService,
+      contactInfo
     });
-    
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      barber: '',
-      service: '',
-      date: '',
-      time: '',
-      notes: ''
-    });
+    // Here you would typically send the data to your backend
+    alert('Booking request submitted! We will confirm your appointment shortly.');
   };
 
   return (
@@ -75,210 +55,193 @@ const BookingPage = () => {
         <div className="container-custom relative z-10 text-white">
           <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-4">Book An Appointment</h1>
           <p className="text-xl opacity-90 max-w-2xl">
-            Schedule your premium grooming experience at KMD Pro Barber
+            Schedule your next premium grooming experience with our master barbers
           </p>
         </div>
       </section>
 
-      {/* Booking Process */}
-      <section className="py-16 md:py-24">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              <h2 className="text-3xl font-playfair font-bold mb-8">Schedule Your Visit</h2>
+      {/* Booking Form */}
+      <section className="py-16">
+        <div className="container-custom max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-2 bg-white p-8 shadow-md rounded-sm">
+              <h2 className="text-2xl font-playfair font-semibold mb-6">Book Your Appointment</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Personal Information */}
-                <div className="bg-white p-6 border border-gray-200 rounded-sm shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">Personal Information</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
-                      />
-                    </div>
+                <div>
+                  <h3 className="text-xl font-playfair mb-4">Select a Service</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {services.map(service => (
+                      <div 
+                        key={service.id}
+                        className={`p-4 border cursor-pointer hover:bg-barber-gold/10 transition-colors ${selectedService === service.id ? 'border-barber-gold bg-barber-gold/10' : 'border-gray-200'}`}
+                        onClick={() => setSelectedService(service.id)}
+                      >
+                        <div className="flex justify-between">
+                          <span className="font-medium">{service.name}</span>
+                          <span className="text-barber-gold">{service.price}</span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  
-                  <div className="mt-6">
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone Number</label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="text-xl font-playfair mb-4">Select a Date</h3>
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={setDate}
+                      className="rounded-md border"
+                      disabled={(date) => {
+                        const day = date.getDay();
+                        // Disable Mondays (day 1)
+                        return day === 1;
+                      }}
                     />
                   </div>
-                </div>
-                
-                {/* Service Selection */}
-                <div className="bg-white p-6 border border-gray-200 rounded-sm shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">Choose Your Service</h3>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="service" className="block text-sm font-medium mb-2">Select Service</label>
-                    <select
-                      id="service"
-                      name="service"
-                      required
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map(service => (
-                        <option key={service.id} value={service.id}>
-                          {service.name} ({service.duration} - {service.price})
-                        </option>
-                      ))}
-                    </select>
-                  </div>
                   
                   <div>
-                    <label htmlFor="barber" className="block text-sm font-medium mb-2">Select Barber (Optional)</label>
-                    <select
-                      id="barber"
-                      name="barber"
-                      value={formData.barber}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
-                    >
-                      <option value="">No preference</option>
-                      {barbers.map(barber => (
-                        <option key={barber.id} value={barber.id}>
-                          {barber.name} - {barber.specialties}
-                        </option>
+                    <h3 className="text-xl font-playfair mb-4">Select a Time</h3>
+                    <div className="grid grid-cols-3 gap-2">
+                      {availableTimes.map((time) => (
+                        <div 
+                          key={time}
+                          className={`py-2 px-3 text-center border cursor-pointer hover:bg-barber-gold/10 transition-colors ${selectedTime === time ? 'border-barber-gold bg-barber-gold/10' : 'border-gray-200'}`}
+                          onClick={() => setSelectedTime(time)}
+                        >
+                          {time}
+                        </div>
                       ))}
-                    </select>
-                  </div>
-                </div>
-                
-                {/* Date and Time */}
-                <div className="bg-white p-6 border border-gray-200 rounded-sm shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">Select Date & Time</h3>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="date" className="block text-sm font-medium mb-2">Preferred Date</label>
-                      <div className="relative">
-                        <input
-                          id="date"
-                          name="date"
-                          type="date"
-                          required
-                          value={formData.date}
-                          onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
-                        />
-                        <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 text-barber-charcoal/60" size={18} />
-                      </div>
                     </div>
-                    
-                    <div>
-                      <label htmlFor="time" className="block text-sm font-medium mb-2">Preferred Time</label>
-                      <select
-                        id="time"
-                        name="time"
-                        required
-                        value={formData.time}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
-                      >
-                        <option value="">Select a time</option>
-                        {timeSlots.map((time, index) => (
-                          <option key={index} value={time}>{time}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Additional Notes */}
-                <div className="bg-white p-6 border border-gray-200 rounded-sm shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">Additional Information</h3>
-                  
-                  <div>
-                    <label htmlFor="notes" className="block text-sm font-medium mb-2">Special Requests or Notes</label>
-                    <textarea
-                      id="notes"
-                      name="notes"
-                      rows={4}
-                      value={formData.notes}
-                      onChange={handleChange}
-                      placeholder="Any special requests or additional information?"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
-                    ></textarea>
                   </div>
                 </div>
                 
                 <div>
-                  <Button type="submit" className="bg-barber-gold hover:bg-barber-brown text-white px-8 py-6 rounded-sm">
-                    Confirm Booking
+                  <h3 className="text-xl font-playfair mb-4">Your Contact Information</h3>
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={contactInfo.name}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={contactInfo.phone}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={contactInfo.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="notes" className="block text-sm font-medium text-gray-700 mb-1">Special Requests (Optional)</label>
+                      <textarea
+                        id="notes"
+                        name="notes"
+                        value={contactInfo.notes}
+                        onChange={handleInputChange}
+                        rows={3}
+                        className="w-full p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-barber-gold"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="pt-4">
+                  <Button type="submit" className="w-full bg-barber-gold hover:bg-barber-brown text-white py-6 rounded-sm">
+                    Book Appointment
                   </Button>
                 </div>
               </form>
             </div>
             
-            {/* Sidebar */}
-            <div>
-              <div className="bg-barber-cream p-6 border-t-2 border-barber-gold sticky top-24">
-                <h3 className="text-xl font-playfair font-semibold mb-6">Booking Information</h3>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <Check className="text-barber-gold mt-1 mr-3 flex-shrink-0" size={20} />
-                    <p className="text-barber-charcoal/80">
-                      <span className="font-semibold">Online Booking:</span> Secure your preferred time slot without the wait.
-                    </p>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <Clock className="text-barber-gold mt-1 mr-3 flex-shrink-0" size={20} />
-                    <p className="text-barber-charcoal/80">
-                      <span className="font-semibold">Arrival Time:</span> Please arrive 10 minutes before your scheduled appointment.
-                    </p>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <Calendar className="text-barber-gold mt-1 mr-3 flex-shrink-0" size={20} />
-                    <p className="text-barber-charcoal/80">
-                      <span className="font-semibold">Cancellation Policy:</span> Please provide at least 24 hours notice for cancellations.
-                    </p>
-                  </div>
+            <div className="bg-barber-charcoal text-white p-8 rounded-sm">
+              <h3 className="text-xl font-playfair font-semibold mb-6">Booking Information</h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-semibold mb-2">Business Hours</h4>
+                  <p className="text-gray-300">
+                    Monday: Closed<br />
+                    Tuesday - Friday: 07:00 - 18:00<br />
+                    Saturday - Sunday: 07:00 - 15:00
+                  </p>
                 </div>
                 
-                <div className="mt-8 pt-6 border-t border-barber-gold/30">
-                  <h4 className="font-semibold mb-4">Need Assistance?</h4>
-                  <p className="text-barber-charcoal/80 mb-4">
-                    If you need help with your booking or have any questions, feel free to contact us.
-                  </p>
-                  <p className="font-medium">
-                    <a href="tel:+27788246963" className="text-barber-gold hover:underline">+27 78 824 6963</a>
-                  </p>
+                <div>
+                  <h4 className="font-semibold mb-2">Cancellation Policy</h4>
+                  <p className="text-gray-300">Please provide at least 24 hours notice for cancellations to avoid a cancellation fee.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2">Late Arrivals</h4>
+                  <p className="text-gray-300">If you arrive late, your service may be shortened or rescheduled to accommodate other appointments.</p>
+                </div>
+                
+                <div className="pt-6">
+                  <div className="p-4 bg-barber-gold/20 border border-barber-gold/30 rounded-sm">
+                    <p className="text-barber-gold font-semibold">Need assistance with booking?</p>
+                    <p className="text-gray-300 mt-2">Call us directly at +27 78 824 6963 or email at kdmprobarber@outlook.com</p>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking FAQs */}
+      <section className="py-16 bg-gray-50">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-3xl font-playfair font-semibold mb-8 text-center">Frequently Asked Questions</h2>
+          
+          <div className="space-y-6">
+            <div className="bg-white p-6 shadow-sm">
+              <h3 className="font-semibold text-lg mb-2">How early should I arrive for my appointment?</h3>
+              <p className="text-gray-700">We recommend arriving 5-10 minutes before your scheduled appointment time to ensure a smooth check-in process.</p>
+            </div>
+            
+            <div className="bg-white p-6 shadow-sm">
+              <h3 className="font-semibold text-lg mb-2">Can I book multiple services in one appointment?</h3>
+              <p className="text-gray-700">Yes, you can select multiple services. Simply let us know in the special requests field or choose one of our combination packages.</p>
+            </div>
+            
+            <div className="bg-white p-6 shadow-sm">
+              <h3 className="font-semibold text-lg mb-2">What forms of payment do you accept?</h3>
+              <p className="text-gray-700">We accept cash, credit/debit cards, and mobile payment options like SnapScan and Zapper.</p>
+            </div>
+            
+            <div className="bg-white p-6 shadow-sm">
+              <h3 className="font-semibold text-lg mb-2">Do you offer gift cards?</h3>
+              <p className="text-gray-700">Yes, we offer gift cards for all our services. They make perfect gifts for any occasion. You can purchase them in-store or contact us for more information.</p>
             </div>
           </div>
         </div>
