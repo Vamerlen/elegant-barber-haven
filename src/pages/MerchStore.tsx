@@ -1,55 +1,57 @@
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import { ShoppingBag, Package, Tag, CreditCard } from 'lucide-react';
+import { ShoppingBag, Package, Tag, CreditCard, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-// Sample merchandise items data
+// Sample merchandise items data with updated images
 const merchItems = [
   {
     id: 1,
     name: "KMD Pro Barber T-Shirt",
     description: "Premium cotton t-shirt with embroidered logo",
     price: "R250",
-    imageUrl: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 2,
     name: "Grooming Kit",
     description: "Complete set with beard oil, comb and scissors",
     price: "R450",
-    imageUrl: "https://images.unsplash.com/photo-1589439108834-c52047d64315?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1621607149149-fee727974f11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 3,
     name: "Barber Cap",
     description: "Stylish cap with KMD Pro Barber embroidery",
     price: "R180",
-    imageUrl: "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1534215754734-18e55d13e346?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 4,
     name: "Premium Beard Oil",
     description: "Nourishing beard oil with natural ingredients",
     price: "R200",
-    imageUrl: "https://images.unsplash.com/photo-1517594422361-5eeb8ae275a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1580087433295-ab2600c1030e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 5,
     name: "KMD Hoodie",
     description: "Comfortable hoodie with embroidered logo",
     price: "R350",
-    imageUrl: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1578681994506-b8f463449011?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 6,
     name: "Barber Accessories Set",
     description: "Collection of premium barber accessories",
     price: "R650",
-    imageUrl: "https://images.unsplash.com/photo-1599351431613-275b0699ee7c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1626808642875-0aa545482dfb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   }
 ];
+
+const PRINTIFY_SHOP_URL = "https://kmd-pro-barber-fc86120d5e.printify.me/";
 
 const MerchStore = () => {
   return (
@@ -64,7 +66,7 @@ const MerchStore = () => {
           </p>
           <div className="mt-6">
             <Button asChild className="bg-barber-gold hover:bg-white hover:text-barber-charcoal text-white px-8 py-6 rounded-sm">
-              <a href="https://kmd-pro-barber-fc86120d5e.printify.me/" target="_blank" rel="noopener noreferrer">See Printify Store</a>
+              <a href={PRINTIFY_SHOP_URL} target="_blank" rel="noopener noreferrer">See Printify Store</a>
             </Button>
           </div>
         </div>
@@ -98,6 +100,15 @@ const MerchStore = () => {
             <p className="text-barber-charcoal/80 max-w-2xl mx-auto">
               Quality merchandise that reflects our premium barbershop experience. Each item is carefully selected and designed with our signature elegant style.
             </p>
+            <div className="mt-6">
+              <Button asChild className="bg-barber-gold hover:bg-barber-brown text-white px-8 py-3 rounded-sm">
+                <a href={PRINTIFY_SHOP_URL} target="_blank" rel="noopener noreferrer">
+                  <span className="flex items-center gap-2">
+                    See Our Printify Shop <ExternalLink size={16} />
+                  </span>
+                </a>
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -115,8 +126,10 @@ const MerchStore = () => {
                   <p className="text-barber-charcoal/70 mb-4">{item.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-barber-gold font-playfair font-bold text-xl">{item.price}</span>
-                    <Button className="bg-barber-charcoal hover:bg-barber-brown">
-                      Add to Cart
+                    <Button asChild className="bg-barber-charcoal hover:bg-barber-brown">
+                      <a href={PRINTIFY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        See on Printify <ExternalLink size={16} />
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -177,7 +190,9 @@ const MerchStore = () => {
             Browse our collection of premium merchandise and find the perfect addition to your style. From grooming products to apparel, we've got you covered.
           </p>
           <Button asChild className="bg-barber-gold hover:bg-white hover:text-barber-charcoal text-white px-8 py-6 rounded-sm">
-            <Link to="/contact">Contact for Custom Orders</Link>
+            <a href={PRINTIFY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              Visit Our Printify Store <ExternalLink size={16} />
+            </a>
           </Button>
         </div>
       </section>
