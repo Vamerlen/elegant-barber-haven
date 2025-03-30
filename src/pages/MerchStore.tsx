@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '@/components/layout/Layout';
 import { ShoppingBag, Package, Tag, CreditCard, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,17 +11,22 @@ import { Button } from '@/components/ui/button';
 const PRINTIFY_SHOP_URL = "https://kmd-pro-barber-fc86120d5e.printify.me/";
 
 const MerchStore = () => {
+  useEffect(() => {
+    // Scroll to top when page loads
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <Layout>
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 bg-gradient-to-r from-barber-charcoal to-black">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container-custom relative z-10 text-white">
-          <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-4">Merchandise Store</h1>
-          <p className="text-xl opacity-90 max-w-2xl">
+          <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-4 animate-fade-in">Merchandise Store</h1>
+          <p className="text-xl opacity-90 max-w-2xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Premium quality products for the modern gentleman
           </p>
-          <div className="mt-6">
+          <div className="mt-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Button asChild className="bg-barber-gold hover:bg-white hover:text-barber-charcoal text-white px-8 py-6 rounded-sm">
               <a href={PRINTIFY_SHOP_URL} target="_blank" rel="noopener noreferrer">See Printify Store</a>
             </Button>

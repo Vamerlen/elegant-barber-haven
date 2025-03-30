@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button';
 
 const serviceData = [
   {
-    icon: <Scissors className="text-barber-gold" size={32} />,
-    title: "Buzzcut",
-    description: "Quick and clean buzzcut with consistent length all around using premium clippers.",
-    price: "R100"
+    icon: <Award className="text-barber-gold" size={32} />,
+    title: "Hair Dye & Haircut",
+    description: "Full color service with expert cutting and styling, available in all colors.",
+    price: "R400"
   },
   {
     icon: <Star className="text-barber-gold" size={32} />,
@@ -18,10 +18,10 @@ const serviceData = [
     price: "R150"
   },
   {
-    icon: <Award className="text-barber-gold" size={32} />,
-    title: "Hair Dye & Haircut",
-    description: "Full color service with expert cutting and styling, available in all colors.",
-    price: "R400"
+    icon: <Scissors className="text-barber-gold" size={32} />,
+    title: "Buzzcut",
+    description: "Quick and clean buzzcut with consistent length all around using premium clippers.",
+    price: "R100"
   },
   {
     icon: <Sparkles className="text-barber-gold" size={32} />,
@@ -44,7 +44,10 @@ const Services = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {serviceData.map((service, index) => (
-            <div key={index} className="bg-white p-8 shadow-md hover:shadow-lg transition-shadow border-t-2 border-barber-gold">
+            <div 
+              key={index} 
+              className="bg-white p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-t-2 border-barber-gold"
+            >
               <div className="mb-4">{service.icon}</div>
               <h3 className="text-xl font-playfair font-semibold mb-2">{service.title}</h3>
               <p className="text-barber-charcoal/70 mb-4">{service.description}</p>
@@ -54,7 +57,7 @@ const Services = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button asChild className="bg-barber-charcoal hover:bg-barber-brown text-white px-8 py-6 rounded-sm">
+          <Button asChild className="bg-white hover:bg-barber-gold hover:text-white text-barber-charcoal border border-barber-gold px-8 py-6 rounded-sm transition-all duration-300">
             <Link to="/services">View All Services</Link>
           </Button>
         </div>

@@ -1,9 +1,14 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  useEffect(() => {
+    // Scroll to the top on component mount
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className="relative h-screen bg-gradient-to-r from-barber-brown via-barber-charcoal to-black overflow-hidden">
       {/* Add animated gradient overlay */}
@@ -17,19 +22,19 @@ const Hero = () => {
       ></div>
       
       <div className="container-custom relative z-10 flex flex-col justify-center h-full text-white">
-        <div className="max-w-2xl animate-fade-in">
-          <p className="text-barber-gold font-medium mb-2">Welcome to</p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold mb-4">
+        <div className="max-w-2xl animate-fade-in transition-all duration-700 transform translate-y-0 opacity-100">
+          <p className="text-barber-gold font-medium mb-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>Welcome to</p>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold mb-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             KMD <span className="text-barber-gold">Pro</span> Barber
           </h1>
-          <p className="text-lg md:text-xl opacity-90 mb-8">
+          <p className="text-lg md:text-xl opacity-90 mb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             Where traditional barbering meets modern elegance. Experience premier grooming services in Pretoria's finest barber shop.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: '0.8s' }}>
             <Button asChild className="bg-barber-gold hover:bg-barber-brown text-white px-8 py-6 rounded-sm">
               <Link to="/booking">Book Appointment</Link>
             </Button>
-            <Button asChild variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 rounded-sm">
+            <Button asChild variant="outline" className="bg-white/10 border-white text-white hover:bg-white hover:text-barber-charcoal px-8 py-6 rounded-sm transition-all duration-300">
               <Link to="/services">Our Services</Link>
             </Button>
           </div>

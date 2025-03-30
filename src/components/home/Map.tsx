@@ -4,7 +4,7 @@ import { MapPin, Clock, Phone } from 'lucide-react';
 
 const Map = () => {
   const location = {
-    address: '599 Catherina Street, By Braai Mekka, Pretoria, South Africa'
+    address: '599 Catherina Street, Pretoria, South Africa'
   };
 
   return (
@@ -44,7 +44,6 @@ const Map = () => {
                   <h4 className="font-semibold mb-1">Address</h4>
                   <p className="text-barber-charcoal/70">
                     599 Catherina Street<br />
-                    By Braai Mekka<br />
                     Pretoria, South Africa
                   </p>
                 </div>
