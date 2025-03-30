@@ -20,15 +20,17 @@ const BookingPage = () => {
     '07:00', '08:00', '09:00', '10:00', '11:00',
     '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'
   ];
+  
+const services = [
+  { id: 'hairdye', name: 'Hairdye (All colours) + Haircut', price: 'R400' },
+  { id: 'haircut', name: 'Haircut', price: 'R150' },
+  { id: 'fade', name: 'Fade', price: 'R150' },
+  { id: 'shave', name: 'Clean Shave', price: 'R120' },
+  { id: 'combo', name: 'Haircut & Beard Combo', price: 'R75' },
+  { id: 'beard', name: 'Beard Shave', price: 'R50' },
+  { id: 'design', name: 'Line Design', price: 'R30' }
+];
 
-  const services = [
-    { id: 'haircut', name: 'Haircut', price: 'R150' },
-    { id: 'beard', name: 'Beard Trim', price: 'R100' },
-    { id: 'combo', name: 'Haircut & Beard Combo', price: 'R220' },
-    { id: 'shave', name: 'Clean Shave', price: 'R120' },
-    { id: 'fade', name: 'Fade', price: 'R180' },
-    { id: 'design', name: 'Hair Design', price: 'R200+' }
-  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
