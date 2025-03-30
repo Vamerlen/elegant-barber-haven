@@ -1,7 +1,25 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Phone, MapPin, Clock, Instagram, Facebook } from 'lucide-react';
+
+const Tiktok = ({ size }: { size: number }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
+    <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
+    <path d="M15 8c0 1.66-1.34 3-3 3h-1V6c0-1.66 1.34-3 3-3h1v5Z" />
+    <path d="M15 5c1.66 0 3 1.34 3 3v14" />
+  </svg>
+);
 
 const Footer = () => {
   return (
