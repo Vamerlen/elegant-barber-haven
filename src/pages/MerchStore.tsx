@@ -5,51 +5,8 @@ import { ShoppingBag, Package, Tag, CreditCard, ExternalLink } from 'lucide-reac
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-// Sample merchandise items data with updated images
-const merchItems = [
-  {
-    id: 1,
-    name: "KMD Pro Barber T-Shirt",
-    description: "Premium cotton t-shirt with embroidered logo",
-    price: "R250",
-    imageUrl: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 2,
-    name: "Grooming Kit",
-    description: "Complete set with beard oil, comb and scissors",
-    price: "R450",
-    imageUrl: "https://images.unsplash.com/photo-1621607149149-fee727974f11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 3,
-    name: "Barber Cap",
-    description: "Stylish cap with KMD Pro Barber embroidery",
-    price: "R180",
-    imageUrl: "https://images.unsplash.com/photo-1534215754734-18e55d13e346?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 4,
-    name: "Premium Beard Oil",
-    description: "Nourishing beard oil with natural ingredients",
-    price: "R200",
-    imageUrl: "https://images.unsplash.com/photo-1580087433295-ab2600c1030e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 5,
-    name: "KMD Hoodie",
-    description: "Comfortable hoodie with embroidered logo",
-    price: "R350",
-    imageUrl: "https://images.unsplash.com/photo-1578681994506-b8f463449011?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 6,
-    name: "Barber Accessories Set",
-    description: "Collection of premium barber accessories",
-    price: "R650",
-    imageUrl: "https://images.unsplash.com/photo-1626808642875-0aa545482dfb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  }
-];
+// Sample merchandise items data with updated images - no longer needed
+// const merchItems = [ ... ] - removed
 
 const PRINTIFY_SHOP_URL = "https://kmd-pro-barber-fc86120d5e.printify.me/";
 
@@ -92,7 +49,7 @@ const MerchStore = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products Grid - Replaced with Shop Our Collection section */}
       <section className="py-16">
         <div className="container-custom">
           <div className="text-center mb-12">
@@ -110,32 +67,8 @@ const MerchStore = () => {
               </Button>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {merchItems.map((item) => (
-              <div key={item.id} className="bg-white border border-gray-200 rounded-sm overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <div className="h-64 overflow-hidden">
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.name} 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-playfair font-semibold mb-2">{item.name}</h3>
-                  <p className="text-barber-charcoal/70 mb-4">{item.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-barber-gold font-playfair font-bold text-xl">{item.price}</span>
-                    <Button asChild className="bg-barber-charcoal hover:bg-barber-brown">
-                      <a href={PRINTIFY_SHOP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                        See on Printify <ExternalLink size={16} />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          
+          {/* Products grid removed */}
         </div>
       </section>
 
