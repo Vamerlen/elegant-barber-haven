@@ -4,32 +4,12 @@ import Layout from '@/components/layout/Layout';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-const barbers = [
-  {
-    name: "Doudou Madoucha",
-    title: "Founder Master Barber",
-    experience: "33+ years",
-    bio: "Doudou founded KMD Pro Barber with a vision to blend traditional techniques with contemporary style. His precision cuts have earned him recognition throughout Pretoria.",
-  },
-  {
-    name: "Michael Dlamini",
-    title: "Senior Barber",
-    experience: "10+ years",
-    bio: "Michael specializes in classic pompadours and modern fades. His attention to detail and friendly demeanor make him a client favorite.",
-  },
-  {
-    name: "David Nkosi",
-    title: "Style Specialist",
-    experience: "8+ years",
-    bio: "David brings innovative techniques from his international training. He's particularly known for his beard styling and textured cuts.",
-  },
-  {
-    name: "Thabo Molefe",
-    title: "Junior Barber",
-    experience: "5+ years",
-    bio: "Thabo is our rising star with exceptional skills in contemporary styles. He brings fresh energy and modern expertise to our team.",
-  }
-];
+const founder = {
+  name: "Doudou Madoucha",
+  title: "Founder Master Barber",
+  experience: "33+ years",
+  bio: "Doudou founded KMD Pro Barber with a vision to blend traditional techniques with contemporary style. His precision cuts have earned him recognition throughout Pretoria. With over three decades of experience, he continues to lead the team with passion and dedication to the craft of barbering.",
+};
 
 const AboutPage = () => {
   return (
@@ -73,25 +53,23 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Our Team */}
+      {/* Founder Section */}
       <section className="py-16 md:py-24 bg-barber-cream">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4">Meet Our Master Barbers</h2>
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4">Meet Our Founder</h2>
             <p className="text-barber-charcoal/80 max-w-2xl mx-auto">
-              Our team of skilled professionals combines decades of experience with passion for their craft.
+              The visionary behind KMD Pro Barber who brings decades of experience and passion to every cut.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {barbers.map((barber, index) => (
-              <div key={index} className="bg-white p-8 shadow-md hover:shadow-lg transition-shadow border-t-2 border-barber-gold">
-                <h3 className="text-xl font-playfair font-semibold mb-1">{barber.name}</h3>
-                <p className="text-barber-gold mb-2">{barber.title}</p>
-                <p className="text-sm mb-3">Experience: {barber.experience}</p>
-                <p className="text-barber-charcoal/70">{barber.bio}</p>
-              </div>
-            ))}
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white p-8 shadow-md hover:shadow-lg transition-shadow border-t-2 border-barber-gold">
+              <h3 className="text-2xl font-playfair font-semibold mb-1">{founder.name}</h3>
+              <p className="text-barber-gold mb-2">{founder.title}</p>
+              <p className="text-sm mb-3">Experience: {founder.experience}</p>
+              <p className="text-barber-charcoal/70">{founder.bio}</p>
+            </div>
           </div>
         </div>
       </section>
