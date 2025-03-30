@@ -49,7 +49,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="mr-2 mt-1 text-barber-gold" size={16} />
-                <span>599 Catherina Street, <br />By Braai Mekka, <br />Pretoria</span>
+                <span>599 Catherina Street, <br />Gezina <br />Pretoria</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 text-barber-gold" size={16} />
