@@ -30,7 +30,7 @@ const services = [
     description: "Quick and clean buzzcut with consistent length all around using premium clippers for a low-maintenance style.",
     price: "R100",
     priceValue: 100,
-    duration: "30 min",
+    duration: "25 min",
     category: "haircut"
   },
   {
@@ -46,17 +46,17 @@ const services = [
     icon: <Wind className="text-barber-gold" size={32} />,
     title: "Lined Designs",
     description: "Custom hair designs with precision lines and patterns by our expert barbers, add personality to any haircut.",
-    price: "R20",
-    priceValue: 20,
-    duration: "60 min",
+    price: "R30",
+    priceValue: 30,
+    duration: "15 min",
     category: "styling"
   },
   {
     icon: <Palette className="text-barber-gold" size={32} />,
     title: "Bald Shave & Beard Shave",
     description: "Complete head and beard shave with hot towel treatment for the ultimate smooth, clean finish.",
-    price: "R60",
-    priceValue: 60,
+    price: "R75",
+    priceValue: 75,
     duration: "45 min",
     category: "shaving"
   },
